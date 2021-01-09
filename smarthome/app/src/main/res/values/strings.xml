@@ -7,6 +7,8 @@
     <string name="move">move</string>
     <string name="bell">bell</string>
     <string name="notification">Notification:-</string>
+    <string name="log_in">Login</string>
+    <string name="remember_me">Remember me</string>
 
 
 </resources>

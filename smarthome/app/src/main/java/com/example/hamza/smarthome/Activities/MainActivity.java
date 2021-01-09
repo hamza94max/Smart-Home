@@ -1,4 +1,4 @@
-package com.example.hamza.smarthome;
+package com.example.hamza.smarthome.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -10,6 +10,8 @@ import com.example.hamza.smarthome.Fragments.HomeFragment;
 import com.example.hamza.smarthome.Fragments.HumidFragment;
 import com.example.hamza.smarthome.Fragments.MoveFragment;
 import com.example.hamza.smarthome.Fragments.TempFragment;
+import com.example.hamza.smarthome.R;
+import com.example.hamza.smarthome.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
