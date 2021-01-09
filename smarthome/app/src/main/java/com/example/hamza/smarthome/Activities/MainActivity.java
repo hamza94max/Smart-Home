@@ -11,7 +11,7 @@ import com.example.hamza.smarthome.Fragments.HumidFragment;
 import com.example.hamza.smarthome.Fragments.MoveFragment;
 import com.example.hamza.smarthome.Fragments.TempFragment;
 import com.example.hamza.smarthome.R;
-import com.example.hamza.smarthome.ViewPagerAdapter;
+import com.example.hamza.smarthome.Adapters.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {

@@ -18,17 +18,19 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:background="#0786BF"
-        android:layout_weight="0.6"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </RelativeLayout>
-    <RelativeLayout
-        android:background="#FF9800"
         android:layout_weight="0.4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <include layout="@layout/temperature"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="0.4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/control"/>
 
     </RelativeLayout>
 </LinearLayout>
