@@ -1,4 +1,4 @@
-package com.example.hamza.smarthome;
+package com.example.hamza.smarthome.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
