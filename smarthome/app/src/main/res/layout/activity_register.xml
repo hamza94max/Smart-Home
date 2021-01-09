@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/back"
+    android:padding="10dp"
+    tools:context=".Activities.Register">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="loginbtn"
+            android:padding="5dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"/>
+        <TextView
+            android:id="@+id/LogIntext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:padding="7dp"
+            android:gravity="end"
+            android:textColor="@color/blackcolor"
+            android:textSize="21dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Your \n   Account"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/blackcolor"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:hint=" User Name"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullwhite"
+            android:elevation="5dp"
+            android:background="@drawable/btn"
+            />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:hint=" Email "
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/fullwhite"
+            android:elevation="5dp"
+            android:background="@drawable/btn"
+            />
+        <EditText
+            android:id="@+id/passward"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:hint=" Password "
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:inputType="textPassword"
+            android:textColorHint="@color/fullwhite"
+            android:elevation="5dp"
+            android:background="@drawable/btn"
+            />
+
+        <Button
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:id="@+id/signup"
+            android:text="Sign up"
+            android:textColor="@color/whitecolor"
+            android:textAllCaps="false"
+            android:layout_marginTop="25dp"
+            android:elevation="5dp"
+            android:background="@drawable/joinbtn"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="By Pressing 'Sign up' You agree to our trems and conditions"
+            android:textColor="#3370A6"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

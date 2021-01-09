@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+    android:id="@+id/temper"
+    android:layout_width="match_parent"
+    android:textSize="26sp"
+    android:textColor="@color/dab"
+    android:textStyle="bold"
+    android:layout_height="wrap_content"
+    android:text="Controllers:-"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/temper"
+        android:layout_marginTop="8dp"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:padding="5dp"
+            android:orientation="vertical"
+            tools:ignore="ObsoleteLayoutParam" >
+
+            <TextView
+                android:id="@+id/inside"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/dab"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Inside"/>
+
+            <Switch
+                android:id="@+id/led1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Led 1"
+                android:layout_below="@+id/inside"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+            <Switch
+                android:id="@+id/led2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/led1"
+                android:text="Led 2"
+                android:layout_marginTop="6dp"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+            <Switch
+                android:id="@+id/led3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/led2"
+                android:text="Led 3"
+                android:layout_marginTop="6dp"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+            <Switch
+                android:id="@+id/led4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/led3"
+                android:text="Led 4"
+                android:layout_marginTop="6dp"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+            <Switch
+                android:id="@+id/led5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/led4"
+                android:text="Led 5"
+                android:layout_marginTop="6dp"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/outside"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="@color/dab"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Outside"/>
+            <Switch
+                android:id="@+id/led1_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Led 1"
+                android:layout_below="@+id/outside"
+                android:layout_marginTop="8dp"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+            <Switch
+                android:id="@+id/led2_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/led1_out"
+                android:text="Led 2"
+                android:layout_marginTop="8dp"
+                android:textSize="19sp"
+                android:textColor="@color/dab"
+                android:shadowColor="@color/dab"
+                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</RelativeLayout>
