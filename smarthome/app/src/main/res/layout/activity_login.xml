@@ -61,7 +61,7 @@
         </RelativeLayout>
 
         <EditText
-            android:id="@+id/emaillogin"
+            android:id="@+id/name_login"
             android:layout_width="285dp"
             android:layout_height="50dp"
             android:hint="User Name"

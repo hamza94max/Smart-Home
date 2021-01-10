@@ -3,6 +3,7 @@ package com.example.hamza.smarthome.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -12,6 +13,7 @@ import com.example.hamza.smarthome.Fragments.MoveFragment;
 import com.example.hamza.smarthome.Fragments.TempFragment;
 import com.example.hamza.smarthome.R;
 import com.example.hamza.smarthome.Adapters.ViewPagerAdapter;
+import com.example.hamza.smarthome.SharedPref;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+//check if user is logged in
+        if (!SharedPref.getInstance(this).isLoggedIn()) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
         home=home.toLowerCase();
-
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         getTabs();
