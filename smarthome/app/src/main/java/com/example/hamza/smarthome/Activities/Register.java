@@ -10,11 +10,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.example.hamza.smarthome.ApiClient;
-import com.example.hamza.smarthome.Interface.UserClient;
-import com.example.hamza.smarthome.Models.User;
 import com.example.hamza.smarthome.R;
 
 import retrofit2.Call;
@@ -41,8 +36,10 @@ public class Register extends AppCompatActivity {
 
     }
     public void Regbtn(View view) {
-
-        validateUserData();
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
+        //validateUserData();
 
     }
     public void loginbtn(View view) {
@@ -51,7 +48,7 @@ public class Register extends AppCompatActivity {
         finish();
     }
 
-
+/*
     // To check if username,email,pass not empty
     private void validateUserData() {
 
@@ -136,7 +133,7 @@ public class Register extends AppCompatActivity {
 
 
 
-}
+}*/
 
 
 }
