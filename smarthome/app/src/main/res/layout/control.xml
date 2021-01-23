@@ -12,6 +12,7 @@
     android:textColor="@color/dab"
     android:textStyle="bold"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
     android:text="Controllers:-"/>
 
 

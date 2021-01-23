@@ -6,17 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.hamza.smarthome.ApiClient;
-import com.example.hamza.smarthome.Interface.UserClient;
-import com.example.hamza.smarthome.Models.User;
+
 import com.example.hamza.smarthome.R;
-import com.example.hamza.smarthome.SharedPref;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -58,11 +53,14 @@ public class Login extends AppCompatActivity {
     }
 
     public void login(View view) {
-       validateUserData();
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
+       //validateUserData();
     }
 
 
-
+/*
     private void validateUserData() {
 
         //first getting the values
@@ -123,7 +121,8 @@ public class Login extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
+
 }
 
 

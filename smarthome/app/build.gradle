@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.hamza.smarthome"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility '1.8'
+        targetCompatibility '1.8'
+    }
 }
 
 dependencies {
@@ -28,6 +32,12 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+    implementation 'com.xw.repo:bubbleseekbar:3.20'
+
+
     //noinspection GradleDependency
     implementation 'com.squareup.okhttp3:okhttp:3.6.0'
 

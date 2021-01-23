@@ -1,62 +1,52 @@
 package com.example.hamza.smarthome.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.widget.CompoundButton;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.hamza.smarthome.Fragments.HomeFragment;
-import com.example.hamza.smarthome.Fragments.HumidFragment;
-import com.example.hamza.smarthome.Fragments.MoveFragment;
-import com.example.hamza.smarthome.Fragments.TempFragment;
 import com.example.hamza.smarthome.R;
-import com.example.hamza.smarthome.Adapters.ViewPagerAdapter;
-import com.example.hamza.smarthome.SharedPref;
-import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
-    TabLayout tabLayout;
-    ViewPager viewPager;
-    String home ="Home";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//check if user is logged in
+/*
+        //check if user is logged in
         if (!SharedPref.getInstance(this).isLoggedIn()) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
-        }
-        home=home.toLowerCase();
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager = findViewById(R.id.viewPager);
-        getTabs();
+        } */
+
+        Switch led1=findViewById(R.id.led1);
+        Switch led2=findViewById(R.id.led2);
+        Switch led3=findViewById(R.id.led3);
+        Switch led4=findViewById(R.id.led4);
+        Switch led5=findViewById(R.id.led5);
 
 
-    }
 
-    public void getTabs(){
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        new Handler().post(new Runnable() {
+
+
+
+        Switch auto =findViewById(R.id.auto);
+        auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void run() {
-                viewPagerAdapter.addFragment(HomeFragment.newInstance(),home.toLowerCase());
-                viewPagerAdapter.addFragment(TempFragment.newInstance(),"Temp");
-                viewPagerAdapter.addFragment(MoveFragment.newInstance(),"Movement");
-                viewPagerAdapter.addFragment(HumidFragment.newInstance(),"Humidity");
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
-
-
-                viewPager.setAdapter(viewPagerAdapter);
-                tabLayout.setupWithViewPager(viewPager);
             }
         });
+
+
+
+
+
     }
+
 }

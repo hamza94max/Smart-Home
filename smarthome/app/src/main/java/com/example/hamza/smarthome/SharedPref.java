@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import com.example.hamza.smarthome.Activities.MainActivity;
 
 public class SharedPref {
+
+    /*
     //Storage File
     public static final String SHARED_PREF_NAME = "hamza";
 
@@ -62,7 +64,7 @@ public class SharedPref {
         editor.commit();
         mCtx.startActivity(new Intent(mCtx, MainActivity.class));
     }
-
+*/
 }
 
 

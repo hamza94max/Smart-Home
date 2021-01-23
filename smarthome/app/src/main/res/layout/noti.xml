@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_marginTop="5dp"
+    android:layout_marginLeft="8dp"
     android:layout_height="match_parent">
-<TextView
-    android:id="@+id/notificationn"
-    android:layout_width="match_parent"
-    android:textSize="26sp"
-    android:textColor="@color/dab"
-    android:textStyle="bold"
-    android:layout_marginLeft="10dp"
-    android:layout_height="wrap_content"
-    android:text="@string/notification"
-    tools:ignore="MissingConstraints"
-    android:layout_marginStart="10dp" />
+
+    <TextView
+        android:id="@+id/notificationn"
+        android:layout_width="match_parent"
+        android:textSize="26sp"
+        android:textColor="@color/dab"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp"
+        android:layout_height="wrap_content"
+        android:text="@string/notification"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="10dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

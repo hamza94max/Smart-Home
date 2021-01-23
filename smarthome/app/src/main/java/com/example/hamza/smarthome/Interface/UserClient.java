@@ -10,6 +10,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface UserClient {
+    /*
     @POST("register.php")
     @FormUrlEncoded
     Call<User> register(@Field("username") String username, @Field("email") String email, @Field("password") String password);
@@ -18,7 +19,7 @@ public interface UserClient {
     @FormUrlEncoded
     Call<User> login(@Field("username") String username, @Field("password") String password);
 
-
+*/
 
 
 }
