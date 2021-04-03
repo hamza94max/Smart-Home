@@ -1,49 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/temper"
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:textSize="26sp"
-        android:textColor="@color/dab"
-        android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        android:layout_height="wrap_content"
-        android:text="Temperature:-"
-      />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/temper"
-        android:layout_marginTop="8dp"
-        android:layoutDirection="ltr"
-        android:orientation="horizontal"
-        >
+        <TextView
+            android:id="@+id/temper"
+            android:layout_width="match_parent"
+            android:textSize="26sp"
+            android:textColor="@color/dab"
+            android:textStyle="bold"
+            android:layout_marginLeft="8dp"
+            android:layout_height="wrap_content"
+            android:text="Temperature:-" />
 
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="vertical"
-            android:padding="5dp"
-            tools:ignore="ObsoleteLayoutParam">
+            android:layout_below="@+id/temper"
+            android:layout_marginTop="8dp"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal">
 
 
-            <Switch
-                android:id="@+id/auto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6.5dp"
-                android:shadowColor="@color/dab"
-                android:text="Auto"
-                android:textColor="@color/dab"
-                android:textSize="19sp"
-                tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical"
+                android:padding="5dp"
+                tools:ignore="ObsoleteLayoutParam">
+
+
+                <Switch
+                    android:id="@+id/auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6.5dp"
+                    android:shadowColor="@color/dab"
+                    android:text="Auto"
+                    android:textColor="@color/dab"
+                    android:textSize="19sp"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <com.xw.repo.BubbleSeekBar
                     android:id="@+id/seekbar1"
@@ -64,214 +69,207 @@
                     app:bsb_show_section_mark="true"
                     app:bsb_show_section_text="true"
                     app:bsb_show_thumb_text="true"
-                    app:bsb_track_color="@color/bluee"/>
+                    app:bsb_track_color="@color/bluee" />
 
 
-            <TextView
-                android:id="@+id/fan1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_toRightOf="@+id/seekbar1"
-                android:layout_below="@+id/auto"
-                android:text="Fan 1"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/bluee"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                tools:ignore="NotSibling" />
+                <TextView
+                    android:id="@+id/fan1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@+id/seekbar1"
+                    android:layout_below="@+id/auto"
+                    android:text="Fan 1"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/bluee"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    tools:ignore="NotSibling" />
 
 
-            <com.xw.repo.BubbleSeekBar
-                android:id="@+id/seekbar2"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/seekbar1"
-                android:layout_marginTop="12dp"
-                app:bsb_bubble_color="#03A9F4"
-                app:bsb_bubble_text_color="@color/colorPrimaryDark"
-                app:bsb_max="5"
-                app:bsb_section_text_size="15sp"
-                app:bsb_min="0"
-                app:bsb_progress="0"
-                app:bsb_second_track_color="@color/dab"
-                app:bsb_section_count="5"
-                app:bsb_section_text_position="bottom_sides"
-                app:bsb_show_progress_in_float="true"
-                app:bsb_show_section_mark="true"
-                app:bsb_show_section_text="true"
-                app:bsb_show_thumb_text="true"
-                app:bsb_track_color="@color/bluee"/>
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/seekbar2"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekbar1"
+                    android:layout_marginTop="12dp"
+                    app:bsb_bubble_color="#03A9F4"
+                    app:bsb_bubble_text_color="@color/colorPrimaryDark"
+                    app:bsb_max="5"
+                    app:bsb_section_text_size="15sp"
+                    app:bsb_min="0"
+                    app:bsb_progress="0"
+                    app:bsb_second_track_color="@color/dab"
+                    app:bsb_section_count="5"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_show_progress_in_float="true"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_track_color="@color/bluee" />
 
 
-            <TextView
-                android:id="@+id/fan2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/fan1"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@+id/seekbar2"
-                android:text="Fan 2"
-                android:textColor="@color/bluee"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/fan2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fan1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/seekbar2"
+                    android:text="Fan 2"
+                    android:textColor="@color/bluee"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
 
-            <com.xw.repo.BubbleSeekBar
-                android:id="@+id/seekbar3"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/seekbar2"
-                android:layout_marginTop="12dp"
-                app:bsb_bubble_color="#03A9F4"
-                app:bsb_bubble_text_color="@color/colorPrimaryDark"
-                app:bsb_max="5"
-                app:bsb_section_text_size="15sp"
-                app:bsb_min="0"
-                app:bsb_progress="0"
-                app:bsb_second_track_color="@color/dab"
-                app:bsb_section_count="5"
-                app:bsb_section_text_position="bottom_sides"
-                app:bsb_show_progress_in_float="true"
-                app:bsb_show_section_mark="true"
-                app:bsb_show_section_text="true"
-                app:bsb_show_thumb_text="true"
-                app:bsb_track_color="@color/bluee"/>
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/seekbar3"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekbar2"
+                    android:layout_marginTop="12dp"
+                    app:bsb_bubble_color="#03A9F4"
+                    app:bsb_bubble_text_color="@color/colorPrimaryDark"
+                    app:bsb_max="5"
+                    app:bsb_section_text_size="15sp"
+                    app:bsb_min="0"
+                    app:bsb_progress="0"
+                    app:bsb_second_track_color="@color/dab"
+                    app:bsb_section_count="5"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_show_progress_in_float="true"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_track_color="@color/bluee" />
 
-            <TextView
-                android:id="@+id/fan3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/fan2"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="17dp"
-                android:layout_toEndOf="@+id/seekbar3"
-                android:layout_toRightOf="@+id/seekbar3"
-                android:text="@string/fan_3"
-                android:textColor="@color/bluee"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                tools:ignore="RtlHardcoded" />
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:layout_marginTop="35dp"
-            android:orientation="vertical"
-            tools:ignore="ObsoleteLayoutParam" >
-
-            <com.xw.repo.BubbleSeekBar
-                android:id="@+id/seekbar4"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:bsb_bubble_color="#03A9F4"
-                app:bsb_bubble_text_color="@color/colorPrimaryDark"
-                app:bsb_max="5"
-                app:bsb_section_text_size="15sp"
-                app:bsb_min="0"
-                app:bsb_progress="0"
-                app:bsb_second_track_color="@color/dab"
-                app:bsb_section_count="5"
-                app:bsb_section_text_position="bottom_sides"
-                app:bsb_show_progress_in_float="true"
-                app:bsb_show_section_mark="true"
-                app:bsb_show_section_text="true"
-                app:bsb_show_thumb_text="true"
-                app:bsb_track_color="@color/bluee"/>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:id="@+id/fan4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/seekbar4"
-                android:layout_toRightOf="@+id/seekbar4"
-                android:text="Heater 1"
-                android:textColor="@color/bluee"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/fan3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fan2"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toEndOf="@+id/seekbar3"
+                    android:layout_toRightOf="@+id/seekbar3"
+                    android:text="@string/fan_3"
+                    android:textColor="@color/bluee"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded" />
 
 
-            <com.xw.repo.BubbleSeekBar
-                android:id="@+id/seekbar5"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/seekbar4"
-                android:layout_marginTop="12dp"
-                app:bsb_bubble_color="#03A9F4"
-                app:bsb_bubble_text_color="@color/colorPrimaryDark"
-                app:bsb_max="5"
-                app:bsb_section_text_size="15sp"
-                app:bsb_min="0"
-                app:bsb_progress="0"
-                app:bsb_second_track_color="@color/dab"
-                app:bsb_section_count="5"
-                app:bsb_section_text_position="bottom_sides"
-                app:bsb_show_progress_in_float="true"
-                app:bsb_show_section_mark="true"
-                app:bsb_show_section_text="true"
-                app:bsb_show_thumb_text="true"
-                app:bsb_track_color="@color/bluee"/>
-            <TextView
-                android:id="@+id/fan5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="27dp"
-                android:layout_below="@+id/fan4"
-                android:layout_toRightOf="@+id/seekbar5"
-                android:text="Heater 2"
-                android:textColor="@color/bluee"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+            </RelativeLayout>
 
-            <com.xw.repo.BubbleSeekBar
-                android:id="@+id/seekbar6"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/seekbar5"
-                android:layout_marginTop="12dp"
-                app:bsb_bubble_color="#03A9F4"
-                app:bsb_bubble_text_color="@color/colorPrimaryDark"
-                app:bsb_max="5"
-                app:bsb_section_text_size="15sp"
-                app:bsb_min="0"
-                app:bsb_progress="0"
-                app:bsb_second_track_color="@color/dab"
-                app:bsb_section_count="5"
-                app:bsb_section_text_position="bottom_sides"
-                app:bsb_show_progress_in_float="true"
-                app:bsb_show_section_mark="true"
-                app:bsb_show_section_text="true"
-                app:bsb_show_thumb_text="true"
-                app:bsb_track_color="@color/bluee"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/fan5"
-                android:layout_marginTop="24dp"
-                android:layout_toRightOf="@+id/seekbar6"
-                android:text="Heater 3"
-                android:textColor="@color/bluee"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_marginTop="35dp"
+                android:orientation="vertical"
+                tools:ignore="ObsoleteLayoutParam">
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/seekbar4"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:bsb_bubble_color="#03A9F4"
+                    app:bsb_bubble_text_color="@color/colorPrimaryDark"
+                    app:bsb_max="5"
+                    app:bsb_section_text_size="15sp"
+                    app:bsb_min="0"
+                    app:bsb_progress="0"
+                    app:bsb_second_track_color="@color/dab"
+                    app:bsb_section_count="5"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_show_progress_in_float="true"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_track_color="@color/bluee" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/fan4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/seekbar4"
+                    android:layout_toRightOf="@+id/seekbar4"
+                    android:text="Heater1"
+                    android:textColor="@color/bluee"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
 
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/seekbar5"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekbar4"
+                    android:layout_marginTop="12dp"
+                    app:bsb_bubble_color="#03A9F4"
+                    app:bsb_bubble_text_color="@color/colorPrimaryDark"
+                    app:bsb_max="5"
+                    app:bsb_section_text_size="15sp"
+                    app:bsb_min="0"
+                    app:bsb_progress="0"
+                    app:bsb_second_track_color="@color/dab"
+                    app:bsb_section_count="5"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_show_progress_in_float="true"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_track_color="@color/bluee" />
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/fan5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:layout_below="@+id/fan4"
+                    android:layout_toRightOf="@+id/seekbar5"
+                    android:text="Heater2"
+                    android:textColor="@color/bluee"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/seekbar6"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekbar5"
+                    android:layout_marginTop="12dp"
+                    app:bsb_bubble_color="#03A9F4"
+                    app:bsb_bubble_text_color="@color/colorPrimaryDark"
+                    app:bsb_max="5"
+                    app:bsb_section_text_size="15sp"
+                    app:bsb_min="0"
+                    app:bsb_progress="0"
+                    app:bsb_second_track_color="@color/dab"
+                    app:bsb_section_count="5"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_show_progress_in_float="true"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_track_color="@color/bluee" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fan5"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@+id/seekbar6"
+                    android:text="Heater3"
+                    android:textColor="@color/bluee"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
 
-
-
-
-
-
-
-
-
-    </LinearLayout>
-</RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
