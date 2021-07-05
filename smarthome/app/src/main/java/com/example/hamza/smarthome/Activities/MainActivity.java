@@ -2,47 +2,28 @@ package com.example.hamza.smarthome.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.databinding.DataBindingUtil;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
-import android.widget.SeekBar;
 import android.widget.Switch;
-
-
 import com.example.hamza.smarthome.R;
-import com.example.hamza.smarthome.databinding.ActivityMainBinding;
 import com.xw.repo.BubbleSeekBar;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-/*
-        //check if user is logged in
-        if (!SharedPref.getInstance(this).isLoggedIn()) {
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        } */
 
-
-
-
-
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led1=findViewById(R.id.led1);
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led2=findViewById(R.id.led2);
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led3=findViewById(R.id.led3);
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led4=findViewById(R.id.led4);
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led5=findViewById(R.id.led5);
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led6=findViewById(R.id.led1_out);
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led7=findViewById(R.id.led2_out);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led1 = findViewById(R.id.led1);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led2 = findViewById(R.id.led2);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led3 = findViewById(R.id.led3);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led4 = findViewById(R.id.led4);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led5 = findViewById(R.id.led5);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led6 = findViewById(R.id.led1_out);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch led7 = findViewById(R.id.led2_out);
 
         BubbleSeekBar fan1 = findViewById(R.id.seekbar1);
         BubbleSeekBar fan2 = findViewById(R.id.seekbar2);
@@ -105,12 +86,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
-
-
-
 
 }

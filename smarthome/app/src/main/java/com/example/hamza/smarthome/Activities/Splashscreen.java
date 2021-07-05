@@ -17,7 +17,9 @@ public class Splashscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
-        ImageView img=findViewById(R.id.img);
+
+
+        ImageView img = findViewById(R.id.img);
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.splash);
         img.startAnimation(animation);
@@ -29,7 +31,7 @@ public class Splashscreen extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 100);
+        }, 200);
 
     }
 }
