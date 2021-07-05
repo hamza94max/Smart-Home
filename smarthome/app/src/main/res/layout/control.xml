@@ -150,7 +150,52 @@
                     android:shadowColor="@color/dab"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
+                <TextView
+                    android:id="@+id/doors"
+                    android:layout_below="@+id/led2_out"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:textColor="@color/dab"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="Door :" />
+
+                <Switch
+                    android:id="@+id/opendoor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="open"
+                    android:layout_below="@+id/doors"
+                    android:layout_marginTop="8dp"
+                    android:textSize="19sp"
+                    android:textColor="@color/dab"
+                    android:shadowColor="@color/dab"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/closedoor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/opendoor"
+                    android:text="close"
+                    android:layout_marginTop="8dp"
+                    android:textSize="19sp"
+                    android:textColor="@color/dab"
+                    android:shadowColor="@color/dab"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+
+
             </RelativeLayout>
+
+
+
+
+
+
+
+
 
 
         </LinearLayout>
