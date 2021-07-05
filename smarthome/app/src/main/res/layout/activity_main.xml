@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".Activities.MainActivity">
 
-
-        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        <ScrollView
+            android:keepScreenOn="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context=".Activities.MainActivity">
+            android:layout_height="match_parent">
 
 
-            <RelativeLayout
-                android:layout_weight="0.5"
+            <LinearLayout xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:ignore="ObsoleteLayoutParam">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <include layout="@layout/noti" />
 
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight="0.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="ObsoleteLayoutParam">
 
-            <RelativeLayout
+                    <include layout="@layout/noti" />
 
-                android:layout_weight="0.3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                </RelativeLayout>
 
-                <include layout="@layout/temperature" />
+                <RelativeLayout
 
-            </RelativeLayout>
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_weight="0.4"
-                android:layout_marginTop="11dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    <include layout="@layout/temperature" />
 
-                <include layout="@layout/control" />
+                </RelativeLayout>
 
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
+                <RelativeLayout
+                    android:layout_weight="0.4"
+                    android:layout_marginTop="11dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include layout="@layout/control" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

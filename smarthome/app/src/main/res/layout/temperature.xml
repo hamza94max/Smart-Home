@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <data>
-
-    </data>
 
     <RelativeLayout
-        android:layoutDirection="ltr"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
         <TextView
             android:id="@+id/temper"
@@ -23,23 +21,32 @@
             android:layout_height="wrap_content"
             android:text="Temperature:-" />
 
+    <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/hum"
+            android:layout_below="@+id/temper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="UnusedAttribute">
+
+            <include layout="@layout/humidty" />
+
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/temper"
-            android:layout_marginTop="8dp"
+            android:layout_below="@+id/hum"
+            android:layout_marginTop="10dp"
             android:layoutDirection="ltr"
             android:orientation="horizontal">
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:orientation="vertical"
                 android:padding="5dp"
                 tools:ignore="ObsoleteLayoutParam">
-
 
                 <Switch
                     android:id="@+id/auto"
@@ -59,7 +66,6 @@
                     android:layout_below="@+id/auto"
                     android:layout_marginTop="12dp"/>
 
-
                 <TextView
                     android:id="@+id/fan1"
                     android:layout_width="wrap_content"
@@ -76,14 +82,12 @@
                     android:layout_marginStart="3dp"
                     android:layout_toEndOf="@+id/seekbar1" />
 
-
                 <com.xw.repo.BubbleSeekBar
                     android:id="@+id/seekbar2"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/seekbar1"
                     android:layout_marginTop="12dp"/>
-
 
                 <TextView
                     android:id="@+id/fan2"
@@ -121,7 +125,6 @@
                     android:textStyle="bold"
                     tools:ignore="RtlHardcoded" />
 
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -129,7 +132,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:layout_marginTop="35dp"
-                android:orientation="vertical"
                 tools:ignore="ObsoleteLayoutParam">
 
                 <com.xw.repo.BubbleSeekBar
@@ -138,7 +140,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     app:bsb_hide_bubble="true"/>
-
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -191,9 +192,7 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-
-            </RelativeLayout>
-
-        </LinearLayout>
-    </RelativeLayout>
-</layout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
