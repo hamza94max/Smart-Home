@@ -1,198 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <RelativeLayout
-        android:layout_marginTop="5dp"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@color/back"
 
-        <TextView
-            android:id="@+id/temper"
-            android:layout_width="match_parent"
-            android:textSize="26sp"
-            android:textColor="@color/dab"
-            android:textStyle="bold"
-            android:layout_marginLeft="8dp"
-            android:layout_height="wrap_content"
-            android:text="Temperature:-" />
+        >
 
-    <RelativeLayout
+
+        <RelativeLayout
             android:layout_marginTop="5dp"
-            android:id="@+id/hum"
-            android:layout_below="@+id/temper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:ignore="UnusedAttribute">
-
-            <include layout="@layout/humidty" />
-
-        </RelativeLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/hum"
-            android:layout_marginTop="10dp"
-            android:layoutDirection="ltr"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/temper"
+                android:layout_width="match_parent"
+                android:textSize="26sp"
+                android:textColor="@color/textcolor"
+                android:textStyle="bold"
+                android:layout_marginLeft="8dp"
+                android:layout_height="wrap_content"
+                android:text="Temperature:-" />
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:padding="5dp"
-                tools:ignore="ObsoleteLayoutParam">
+                android:layout_marginTop="5dp"
+                android:id="@+id/hum"
+                android:layout_below="@+id/temper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="UnusedAttribute">
 
-                <Switch
-                    android:id="@+id/auto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6.5dp"
-                    android:shadowColor="@color/dab"
-                    android:text="Auto"
-                    android:textColor="@color/dab"
-                    android:textSize="19sp"
-                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
-
-                <com.xw.repo.BubbleSeekBar
-                    android:id="@+id/seekbar1"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/auto"
-                    android:layout_marginTop="12dp"/>
-
-                <TextView
-                    android:id="@+id/fan1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:layout_toRightOf="@+id/seekbar1"
-                    android:layout_below="@+id/auto"
-                    android:text="Fan 1"
-                    android:layout_marginTop="8dp"
-                    android:textColor="@color/bluee"
-                    android:textSize="19sp"
-                    android:textStyle="bold"
-                    tools:ignore="NotSibling"
-                    android:layout_marginStart="3dp"
-                    android:layout_toEndOf="@+id/seekbar1" />
-
-                <com.xw.repo.BubbleSeekBar
-                    android:id="@+id/seekbar2"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/seekbar1"
-                    android:layout_marginTop="12dp"/>
-
-                <TextView
-                    android:id="@+id/fan2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fan1"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_toRightOf="@+id/seekbar2"
-                    android:text="Fan 2"
-                    android:textColor="@color/bluee"
-                    android:textSize="19sp"
-                    android:textStyle="bold" />
-
-                <com.xw.repo.BubbleSeekBar
-                    android:id="@+id/seekbar3"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/seekbar2"
-                    android:layout_marginTop="12dp"/>
-
-                <TextView
-                    android:id="@+id/fan3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fan2"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="17dp"
-                    android:layout_toEndOf="@+id/seekbar3"
-                    android:layout_toRightOf="@+id/seekbar3"
-                    android:text="@string/fan_3"
-                    android:textColor="@color/bluee"
-                    android:textSize="19sp"
-                    android:textStyle="bold"
-                    tools:ignore="RtlHardcoded" />
+                <include layout="@layout/humidty" />
 
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:layout_marginTop="35dp"
-                tools:ignore="ObsoleteLayoutParam">
+                android:layout_below="@+id/hum"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal">
 
-                <com.xw.repo.BubbleSeekBar
-                    android:id="@+id/seekbar4"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    app:bsb_hide_bubble="true"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="5dp"
+                    tools:ignore="ObsoleteLayoutParam">
 
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:id="@+id/fan4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/seekbar4"
-                    android:layout_toRightOf="@+id/seekbar4"
-                    android:text="@string/heater1"
-                    android:textColor="@color/bluee"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    <Switch
+                        android:id="@+id/autoSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6.5dp"
+                        android:shadowColor="@color/textcolor"
+                        android:text="Auto"
+                        android:textColor="@color/textcolor"
+                        android:textSize="19sp"
+                        tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
-                <com.xw.repo.BubbleSeekBar
-                    android:id="@+id/seekbar5"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/seekbar4"
-                    android:layout_marginTop="12dp"
-                    app:bsb_hide_bubble="true" />
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/Fan1"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/autoSwitch"
+                        android:layout_marginTop="12dp" />
 
-                <TextView
-                    android:id="@+id/fan5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="27dp"
-                    android:layout_below="@+id/fan4"
-                    android:layout_toRightOf="@+id/seekbar5"
-                    android:text="Heater2"
-                    android:textColor="@color/bluee"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/fan1Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/Fan1"
+                        android:layout_below="@+id/autoSwitch"
+                        android:text="Fan 1"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/textcolor"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        tools:ignore="NotSibling"
+                        android:layout_marginStart="3dp"
+                        android:layout_toEndOf="@+id/Fan1" />
 
-                <com.xw.repo.BubbleSeekBar
-                    android:id="@+id/seekbar6"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/seekbar5"
-                    android:layout_marginTop="12dp"
-                    app:bsb_hide_bubble="true" />
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/Fan2"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Fan1"
+                        android:layout_marginTop="12dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fan5"
-                    android:layout_marginTop="24dp"
-                    android:layout_toRightOf="@+id/seekbar6"
-                    android:text="Heater3"
-                    android:textColor="@color/bluee"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/fan2Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fan1Text"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/Fan2"
+                        android:text="Fan 2"
+                        android:textColor="@color/textcolor"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/Fan3"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Fan2"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:id="@+id/Fan3Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fan2Text"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_toEndOf="@+id/Fan3"
+                        android:layout_toRightOf="@+id/Fan3"
+                        android:text="@string/fan_3"
+                        android:textColor="@color/textcolor"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlHardcoded" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:layout_marginTop="35dp"
+                    tools:ignore="ObsoleteLayoutParam">
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/Heater1"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:bsb_hide_bubble="true" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/heater1Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/Heater1"
+                        android:layout_toRightOf="@+id/Heater1"
+                        android:text="@string/heater1"
+                        android:textColor="@color/textcolor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/Heater2"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Heater1"
+                        android:layout_marginTop="12dp"
+                        app:bsb_hide_bubble="true" />
+
+                    <TextView
+                        android:id="@+id/Heater2Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:layout_below="@+id/Heater1"
+                        android:layout_toRightOf="@+id/Heater2"
+                        android:text="Heater2"
+                        android:textColor="@color/textcolor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/Heater3"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Heater2"
+                        android:layout_marginTop="12dp"
+                        app:bsb_hide_bubble="true" />
+
+                    <TextView
+                        android:id="@+id/Heater3Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Heater2"
+                        android:layout_marginTop="14dp"
+                        android:layout_toRightOf="@+id/Heater3"
+                        android:text="Heater3"
+                        android:textColor="@color/textcolor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
