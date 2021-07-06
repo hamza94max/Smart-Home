@@ -7,6 +7,8 @@
     </data>
 
     <RelativeLayout
+        android:background="@color/back"
+
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,7 +18,7 @@
             android:id="@+id/temper"
             android:layout_width="match_parent"
             android:textSize="26sp"
-            android:textColor="@color/dab"
+            android:textColor="@color/textcolor"
             android:textStyle="bold"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -44,7 +46,7 @@
                     android:id="@+id/inside"
                     android:layout_width="match_parent"
                     android:textSize="20sp"
-                    android:textColor="@color/dab"
+                    android:textColor="@color/textcolor"
                     android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Inside" />
@@ -56,8 +58,8 @@
                     android:text="Led 1"
                     android:layout_below="@+id/inside"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <Switch
@@ -68,8 +70,8 @@
                     android:text="Led 2"
                     android:layout_marginTop="6dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <Switch
@@ -80,8 +82,8 @@
                     android:text="Led 3"
                     android:layout_marginTop="6dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <Switch
@@ -92,8 +94,8 @@
                     android:text="Led 4"
                     android:layout_marginTop="6dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <Switch
@@ -104,8 +106,8 @@
                     android:text="Led 5"
                     android:layout_marginTop="6dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
 
@@ -114,6 +116,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="0.5"
                 android:orientation="vertical">
 
@@ -121,7 +124,7 @@
                     android:id="@+id/outside"
                     android:layout_width="match_parent"
                     android:textSize="20sp"
-                    android:textColor="@color/dab"
+                    android:textColor="@color/textcolor"
                     android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Outside" />
@@ -134,8 +137,8 @@
                     android:layout_below="@+id/outside"
                     android:layout_marginTop="8dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <Switch
@@ -146,8 +149,8 @@
                     android:text="Led 2"
                     android:layout_marginTop="8dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <TextView
@@ -156,7 +159,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:textSize="20sp"
-                    android:textColor="@color/dab"
+                    android:textColor="@color/textcolor"
                     android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Door :" />
@@ -169,8 +172,8 @@
                     android:layout_below="@+id/doors"
                     android:layout_marginTop="8dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
                 <Switch
@@ -181,8 +184,8 @@
                     android:text="close"
                     android:layout_marginTop="8dp"
                     android:textSize="19sp"
-                    android:textColor="@color/dab"
-                    android:shadowColor="@color/dab"
+                    android:textColor="@color/textcolor"
+                    android:shadowColor="@color/textcolor"
                     tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
 
