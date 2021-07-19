@@ -1,6 +1,6 @@
 package com.example.hamza.smarthome.Activities.Datasets;
 
-public class Dataset {
+public class LedsDataset {
 
     static int [] LedIn = {0,1,2,3,4,5,6,7,8,9,10};
     static int [] LedOut = {11,12,13,14};
@@ -59,7 +59,7 @@ public class Dataset {
 
     public static int getLed1OutOff() {return Led1outoff;}
     public static int getLed2OutOff() {return Led2outoff;}
-    
+
 }
 
 
