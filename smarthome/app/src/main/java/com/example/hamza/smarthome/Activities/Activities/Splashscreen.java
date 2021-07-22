@@ -1,16 +1,17 @@
-package com.example.hamza.smarthome.Activities;
+package com.example.hamza.smarthome.Activities.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.flatdialoglibrary.dialog.FlatDialog;
 import com.example.hamza.smarthome.R;
 import com.example.hamza.smarthome.databinding.ActivitySplashscreenBinding;
 
@@ -31,11 +32,10 @@ public class Splashscreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 200);
-
+        }, 1000);
     }
 }

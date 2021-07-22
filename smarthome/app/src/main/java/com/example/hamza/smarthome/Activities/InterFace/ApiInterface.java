@@ -8,7 +8,7 @@ public interface ApiInterface {
 
 
     @GET ("55")
-     Call <Post> gettemp();
+     Call <Post> gettemperture();
 
 
 }
