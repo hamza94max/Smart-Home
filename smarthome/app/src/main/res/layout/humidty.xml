@@ -49,7 +49,7 @@
 
                 <TextView
                     android:id="@+id/tempertureDegree"
-                    android:layout_width="wrap_content"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/textcolor"
                     android:layout_below="@+id/degtext"
@@ -95,7 +95,7 @@
 
                 <TextView
                     android:id="@+id/HumadityPercent"
-                    android:layout_width="wrap_content"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/textcolor"
                     android:layout_below="@+id/percent"

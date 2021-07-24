@@ -1,16 +1,16 @@
-package com.example.hamza.smarthome.Activities;
+package com.example.hamza.smarthome.Activities.ResponseModels;
 
 
 // TODO this class to receive data from server and put the values in these variables
-public class Post {
+public class RequestModel {
 
-    int request ;
+    double request ;
 
-    public Post(int request) {
+    public RequestModel(int request) {
         this.request = request;
     }
 
-    public int getRequest() {
+    public double getRequest() {
         return request;
     }
 

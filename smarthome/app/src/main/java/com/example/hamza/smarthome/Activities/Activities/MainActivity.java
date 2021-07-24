@@ -12,8 +12,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hamza.smarthome.Activities.InterFace.ApiInterface;
-import com.example.hamza.smarthome.Activities.Post;
+import com.example.hamza.smarthome.Activities.Interface.ApiInterface;
+import com.example.hamza.smarthome.Activities.ResponseModels.RequestModel;
 import com.example.hamza.smarthome.Activities.Seekbar.SeekbarFuncations;
 import com.example.hamza.smarthome.R;
 import com.xw.repo.BubbleSeekBar;
@@ -31,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
     Switch led1,led2,led3,led4,led5,led1out,led2out;
 
     EditText IPAddressEdittext;
-    String BASEURL ;
+    String BASEURL;
 
-    TextView temperturetextview;
+    TextView temperturetextview,humaditytextview;
+
+    Retrofit retrofit;
+    ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         showDialog();
 
-
-
         temperturetextview = findViewById(R.id.tempertureDegree);
+        humaditytextview = findViewById(R.id.HumadityPercent);
 
 
         setfansID();
@@ -54,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
     }
-
-
 
         private void showDialog(){
 
@@ -95,31 +98,53 @@ public class MainActivity extends AppCompatActivity {
 
         private void connectToserver(String baseurl){
             // TODO Bulider
-            Retrofit retrofit = new Retrofit.Builder()
+            retrofit = new Retrofit.Builder()
                     .baseUrl(baseurl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
-            ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+            apiInterface = retrofit.create(ApiInterface.class);
 
+          // TODO : Requests for textviews
+           callfor();
 
-            Call <Post> call = apiInterface.gettemperture();
-            call.enqueue(new Callback<Post>() {
+        }
+
+        private void callfor(){
+
+            Call <RequestModel> callforHumadity = apiInterface.getHumadity();
+            request(callforHumadity,humaditytextview);
+
+            Call <RequestModel> callforTemperture = apiInterface.gettemperture();
+            request(callforTemperture,temperturetextview);
+        }
+
+        private void request(Call call, TextView textView){
+
+            call.enqueue(new Callback<RequestModel>() {
                 @Override
-                public void onResponse(Call<Post> call, Response<Post> response) {
+                public void onResponse(Call<RequestModel> call, Response <RequestModel> response) {
 
-                    Toast.makeText(MainActivity.this, "connected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
                     if (response.body() != null) {
-                        temperturetextview.setText(response.body().toString());
+                        textView.setText(response.body().toString());
                     }
                 }
 
                 @Override
-                public void onFailure(Call<Post> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "error", Toast.LENGTH_LONG).show();
+                public void onFailure(Call<RequestModel> call, Throwable t) {
+                    Toast.makeText(MainActivity.this, "Not Connected to server", Toast.LENGTH_LONG).show();
                 }
             });
         }
+
+
+
+
+
+
+
+
 
 
         @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -129,8 +154,19 @@ public class MainActivity extends AppCompatActivity {
 
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         private void closeled(Switch numofled){
-            numofled.setChecked(false);
-        }
+        numofled.setChecked(false);
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
         private void setfansID(){
