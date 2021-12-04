@@ -8,8 +8,10 @@ public class ServerConnection {
 
       public static void connectToserver(ApiInterface apiInterface, String baseurl) {
 
+        final String BASEURL = "http://" + baseurl;
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseurl)
+                .baseUrl(BASEURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

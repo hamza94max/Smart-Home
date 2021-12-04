@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hamza.smarthome.Activities.Interface.ApiInterface;
-import com.example.hamza.smarthome.Activities.ResponseModels.RequestModel;
+import com.example.hamza.smarthome.Activities.ResponseModels.ResponseModel;
+import com.example.hamza.smarthome.Activities.Responses.HumadityResponse;
+import com.example.hamza.smarthome.Activities.Responses.TempertureResponse;
 import com.example.hamza.smarthome.Activities.Seekbar.SeekbarFuncations;
 import com.example.hamza.smarthome.Activities.ServerConnection.ServerConnection;
 import com.example.hamza.smarthome.R;
@@ -31,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText IPAddressEdittext;
     String BASEURL;
-
     TextView temperturetextview, humaditytextview;
 
     ApiInterface apiInterface;
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         //checkLeds();
     }
-
         private void showDialog(){
 
            AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
@@ -68,91 +68,28 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);
 
-            cancelbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    BASEURL = "";
-                    alertDialog.dismiss();
-                    Toast.makeText(MainActivity.this, "Not Connected !!", Toast.LENGTH_SHORT).show();
-                }
+            cancelbtn.setOnClickListener(v -> {
+                alertDialog.dismiss();
+                Toast.makeText(MainActivity.this, "Not Connected !!", Toast.LENGTH_SHORT).show();
             });
 
-            connectbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    connectToserver();
-                   alertDialog.dismiss();
-                }
+            connectbtn.setOnClickListener(v -> {
+                connectToserver();
+               alertDialog.dismiss();
             });
             alertDialog.show();
     }
 
         private void connectToserver(){
             BASEURL = IPAddressEdittext.getText().toString();
-            final String BASEurL = "http://" + BASEURL;
-            ServerConnection.connectToserver(apiInterface, BASEurL);
-
-            callfor();
+            ServerConnection.connectToserver(apiInterface, BASEURL);
+            callforResponses();
         }
 
-        private void callfor(){
-            Call <RequestModel> callforHumadity = apiInterface.getHumadity();
-            request(callforHumadity,humaditytextview);
-
-            Call <RequestModel> callforTemperture = apiInterface.getTemperture();
-            request(callforTemperture,temperturetextview);
+        private void callforResponses(){
+           HumadityResponse.getHumadityResponse(apiInterface, humaditytextview);
+           TempertureResponse.getTempertureResponse(apiInterface, temperturetextview);
         }
-
-        private void request(Call call, TextView textView){
-
-            call.enqueue(new Callback<RequestModel>() {
-                @Override
-                public void onResponse(Call<RequestModel> call, Response <RequestModel> response) {
-
-                    Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
-                    if (response.body() != null) {
-                        textView.setText(response.body().toString());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<RequestModel> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Not Connected to server", Toast.LENGTH_LONG).show();
-                }
-            });
-        }
-
-        private void checkLeds(){
-
-        if (led1.isChecked()){
-            RequestModel requestModel = new RequestModel(1);
-            Call <RequestModel> call = apiInterface.UpdateLedState(1,requestModel);
-
-            call.enqueue(new Callback<RequestModel>() {
-                @Override
-                public void onResponse(Call<RequestModel> call, Response<RequestModel> response) {
-                    openled(led1);
-                }
-
-                @Override
-                public void onFailure(Call<RequestModel> call, Throwable t) {
-
-                    Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        }
-    }
-
-        @SuppressLint("UseSwitchCompatOrMaterialCode")
-        private void openled(Switch numofled){
-            numofled.setChecked(true);
-        }
-
-        @SuppressLint("UseSwitchCompatOrMaterialCode")
-        private void closeled(Switch numofled){
-        numofled.setChecked(false);
-    }
 
         private void setfansID(){
             fan1 = findViewById(R.id.Fan1);
@@ -183,5 +120,37 @@ public class MainActivity extends AppCompatActivity {
             led5 = findViewById(R.id.led5);
             led1out = findViewById(R.id.led1_out);
             led2out = findViewById(R.id.led2_out);
+        }
+
+        private void checkLeds(){
+
+        if (led1.isChecked()){
+            ResponseModel responseModel = new ResponseModel(1);
+            Call <ResponseModel> call = apiInterface.UpdateLedState(1, responseModel);
+
+            call.enqueue(new Callback<ResponseModel>() {
+                @Override
+                public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                    openled(led1);
+                }
+
+                @Override
+                public void onFailure(Call<ResponseModel> call, Throwable t) {
+
+                    Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
+
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        private void openled(Switch numofled){
+            numofled.setChecked(true);
+        }
+
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        private void closeled(Switch numofled){
+            numofled.setChecked(false);
         }
 }
