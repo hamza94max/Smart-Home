@@ -1,9 +1,7 @@
 package com.example.hamza.smarthome.Activities.Seekbar;
 
 import android.content.Context;
-
 import androidx.core.content.ContextCompat;
-
 import com.example.hamza.smarthome.R;
 import com.xw.repo.BubbleSeekBar;
 
@@ -32,13 +30,4 @@ public class SeekbarFuncations {
                 .sectionTextPosition(BubbleSeekBar.TextPosition.BELOW_SECTION_MARK)
                 .build();
     }
-
-
-
-
-
-
-
-
-
 }

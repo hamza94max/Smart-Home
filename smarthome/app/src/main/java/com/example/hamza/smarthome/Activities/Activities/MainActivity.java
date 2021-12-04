@@ -15,14 +15,13 @@ import android.widget.Toast;
 import com.example.hamza.smarthome.Activities.Interface.ApiInterface;
 import com.example.hamza.smarthome.Activities.ResponseModels.RequestModel;
 import com.example.hamza.smarthome.Activities.Seekbar.SeekbarFuncations;
+import com.example.hamza.smarthome.Activities.ServerConnection.ServerConnection;
 import com.example.hamza.smarthome.R;
 import com.xw.repo.BubbleSeekBar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,9 +32,8 @@ public class MainActivity extends AppCompatActivity {
     EditText IPAddressEdittext;
     String BASEURL;
 
-    TextView temperturetextview,humaditytextview;
+    TextView temperturetextview, humaditytextview;
 
-    Retrofit retrofit;
     ApiInterface apiInterface;
 
     @Override
@@ -48,31 +46,26 @@ public class MainActivity extends AppCompatActivity {
         temperturetextview = findViewById(R.id.tempertureDegree);
         humaditytextview = findViewById(R.id.HumadityPercent);
 
-
         setfansID();
         setheatersID();
         setseekbars();
         setledsId();
 
-
-
-
-
-
+        //checkLeds();
     }
 
         private void showDialog(){
 
-             AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+           AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
 
             View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
 
-             IPAddressEdittext = mView.findViewById(R.id.IPAddressEdittext);
+            IPAddressEdittext = mView.findViewById(R.id.IPAddressEdittext);
             Button cancelbtn = mView.findViewById(R.id.btn_cancel);
             Button connectbtn = mView.findViewById(R.id.btn_connect);
 
             alert.setView(mView);
-             AlertDialog alertDialog = alert.create();
+            AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);
 
             cancelbtn.setOnClickListener(new View.OnClickListener() {
@@ -80,42 +73,33 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     BASEURL = "";
                     alertDialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Not Connected !!", Toast.LENGTH_SHORT).show();
                 }
             });
 
             connectbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   BASEURL = IPAddressEdittext.getText().toString();
-                    final String BASEurL = "http://" + BASEURL;
-                    connectToserver(BASEurL);
+                    connectToserver();
                    alertDialog.dismiss();
                 }
             });
             alertDialog.show();
+    }
 
-        }
+        private void connectToserver(){
+            BASEURL = IPAddressEdittext.getText().toString();
+            final String BASEurL = "http://" + BASEURL;
+            ServerConnection.connectToserver(apiInterface, BASEurL);
 
-        private void connectToserver(String baseurl){
-            // TODO Bulider
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(baseurl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-
-            apiInterface = retrofit.create(ApiInterface.class);
-
-          // TODO : Requests for textviews
-           callfor();
-
+            callfor();
         }
 
         private void callfor(){
-
             Call <RequestModel> callforHumadity = apiInterface.getHumadity();
             request(callforHumadity,humaditytextview);
 
-            Call <RequestModel> callforTemperture = apiInterface.gettemperture();
+            Call <RequestModel> callforTemperture = apiInterface.getTemperture();
             request(callforTemperture,temperturetextview);
         }
 
@@ -138,14 +122,27 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
+        private void checkLeds(){
 
+        if (led1.isChecked()){
+            RequestModel requestModel = new RequestModel(1);
+            Call <RequestModel> call = apiInterface.UpdateLedState(1,requestModel);
 
+            call.enqueue(new Callback<RequestModel>() {
+                @Override
+                public void onResponse(Call<RequestModel> call, Response<RequestModel> response) {
+                    openled(led1);
+                }
 
+                @Override
+                public void onFailure(Call<RequestModel> call, Throwable t) {
 
+                    Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
 
-
-
-
+        }
+    }
 
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         private void openled(Switch numofled){
@@ -156,18 +153,6 @@ public class MainActivity extends AppCompatActivity {
         private void closeled(Switch numofled){
         numofled.setChecked(false);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void setfansID(){
             fan1 = findViewById(R.id.Fan1);
@@ -199,7 +184,4 @@ public class MainActivity extends AppCompatActivity {
             led1out = findViewById(R.id.led1_out);
             led2out = findViewById(R.id.led2_out);
         }
-
-
-
 }
