@@ -1,5 +1,7 @@
 # Smart Home 
-is an application used to remotely control and manage connected non-computing devices in the home, typically from a smartphone or tablet. </br></br>
+
+is an application used to remotely control and manage connected non-computing devices in the home, typically from a smartphone or tablet. </br></br></br>
+
 
 
 
@@ -14,3 +16,10 @@ is an application used to remotely control and manage connected non-computing de
 
 
 <br><br><br>
+
+Library For seekbar <br>
+[Seek bar](https://github.com/woxingxiao/BubbleSeekBar)
+
+
+
+
