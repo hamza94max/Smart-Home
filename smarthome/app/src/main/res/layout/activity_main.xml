@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -22,7 +23,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
                 <RelativeLayout
                     android:layout_weight="0.5"
                     android:layout_width="match_parent"
@@ -39,7 +39,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_height="match_parent">
 
-                    <include layout="@layout/temperature" />
+                    <include
+                        android:id="@+id/temperturelayout"
+                        layout="@layout/temperature"
+                        app:fans="@{1}" />
 
                 </RelativeLayout>
 
@@ -49,7 +52,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <include layout="@layout/control" />
+                    <include
+                        android:id="@+id/controlLayout"
+                        layout="@layout/control"
+                        app:leds="@{1}" />
 
                 </RelativeLayout>
             </LinearLayout>

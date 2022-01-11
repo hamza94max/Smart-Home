@@ -10,6 +10,15 @@
     <string name="remember_me">Remember me</string>
     <string name="fan_3">Fan 3</string>
     <string name="heater1">Heater1</string>
+    <string name="enter_your_ip_address">Enter your IP address</string>
+    <string name="connect">Connect</string>
+    <string name="cancel">Cancel</string>
+    <string name="ip_address">IP address</string>
+    <string name="temperature">Temperature</string>
+    <string name="deg">deg</string>
+    <string name="_10">10</string>
+    <string name="humadity">Humadity</string>
+    <string name="_20">20</string>
 
 
 </resources>

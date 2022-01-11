@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="fan1"
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +39,9 @@
                 android:layout_height="wrap_content"
                 tools:ignore="UnusedAttribute">
 
-                <include layout="@layout/humidty" />
+                <include
+                    android:id="@+id/humdityLayout"
+                    layout="@layout/humidty" />
 
             </RelativeLayout>
 
