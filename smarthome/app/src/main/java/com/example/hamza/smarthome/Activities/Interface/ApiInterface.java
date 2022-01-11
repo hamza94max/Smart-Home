@@ -1,7 +1,6 @@
 package com.example.hamza.smarthome.Activities.Interface;
 
-import com.example.hamza.smarthome.Activities.ResponseModels.RequestModel;
-import com.example.hamza.smarthome.Activities.ResponseModels.UpdateModel;
+import com.example.hamza.smarthome.Activities.ResponseModels.ResponseModel;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -11,34 +10,14 @@ import retrofit2.http.Path;
 
 public interface ApiInterface {
 
-    int id = 56;
+    @GET("55")
+    Call<ResponseModel> getTemperture();
 
+    @GET("66")
+    Call<ResponseModel> getHumadity();
 
-    @GET ("55")
-     Call <RequestModel> gettemperture();
-
-    @GET ("66")
-    Call <RequestModel> getHumadity();
-
-
-    // led 1 on
-    @PUT ("{id}")
-    Call <UpdateModel> makeLed1On(@Path("id") int id , @Body UpdateModel updateModel);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // TODO Leds
+    @PUT("{id}")
+    Call<ResponseModel> UpdateLedState(@Path("id") int id, @Body ResponseModel body);
 
 }

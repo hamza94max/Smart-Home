@@ -1,53 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="15dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="IP address"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
-
-    <EditText
-        android:id="@+id/IPAddressEdittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textPostalAddress"
-        android:hint="Enter your IP address"
-        android:textSize="20sp" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-        <Button
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/bluee"
-            android:text="Connect"
-            android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:id="@+id/btn_connect"/>
+            android:gravity="center_horizontal"
+            android:text="@string/ip_address"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-        <Button
+        <EditText
+            android:id="@+id/IPAddressEdittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/bluee"
-            android:text="Cancel"
-            android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:id="@+id/btn_cancel"/>
+            android:layout_marginTop="10dp"
+            android:hint="@string/enter_your_ip_address"
+            android:importantForAutofill="no"
+            android:inputType="textPostalAddress"
+            android:textSize="20sp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluee"
+                android:text="@string/connect"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                tools:ignore="UnusedAttribute" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluee"
+                android:text="@string/cancel"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</layout>

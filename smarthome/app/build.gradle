@@ -25,12 +25,9 @@ android {
         targetCompatibility '1.8'
     }
 
-
-
     dataBinding{
         enabled = true
     }
-
 
 }
 
@@ -49,17 +46,13 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.6.0'
 
     //retrofit
-//noinspection GradleDependency
+    //noinspection GradleDependency
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-//noinspection GradleDependency
+    //noinspection GradleDependency
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
 
     implementation 'com.github.mejdi14:Flat-Dialog-Android:1.0.5'
-
-
-
-
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

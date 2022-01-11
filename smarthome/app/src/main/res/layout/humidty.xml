@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-   >
-
-    <data>
-    </data>
+    <data></data>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layoutDirection="ltr"
-        >
+        tools:ignore="UnusedAttribute">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/temper"
             android:layout_marginTop="8dp"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -30,40 +28,41 @@
                     android:id="@+id/temptext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Temperature"
+                    android:layout_marginStart="12dp"
                     android:textSize="22sp"
                     android:textColor="@color/textcolor"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="12dp" />
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/temperature" />
 
                 <TextView
                     android:id="@+id/degtext"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="deg"
+                    android:layout_marginStart="120dp"
                     android:layout_below="@+id/temptext"
                     android:textColor="@color/textcolor"
                     android:textSize="18sp"
                     android:layout_marginTop="14dp"
-                    android:layout_marginLeft="120dp" />
+                    android:layout_marginLeft="120dp"
+                    android:text="@string/deg" />
 
                 <TextView
-                    android:id="@+id/tempertureDegree"
+                    android:id="@+id/tempertureDegreeTextview"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/textcolor"
                     android:layout_below="@+id/degtext"
-                    android:text="10"
+                    android:layout_marginStart="12dp"
                     android:textSize="95sp"
                     android:textStyle="bold"
                     android:layout_marginTop="0dp"
-                    android:layout_marginLeft="12dp" />
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/_10" />
 
             </RelativeLayout>
 
-
             <RelativeLayout
-                android:layout_toRightOf="@+id/templayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
@@ -73,12 +72,12 @@
                     android:id="@+id/humidText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Humadity"
+                    android:layout_marginStart="12dp"
                     android:textSize="22sp"
                     android:textColor="@color/textcolor"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="12dp" />
-
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/humadity" />
 
                 <TextView
                     android:id="@+id/percent"
@@ -92,20 +91,18 @@
                     android:layout_marginLeft="130dp"
                     android:layout_marginStart="130dp" />
 
-
                 <TextView
-                    android:id="@+id/HumadityPercent"
+                    android:id="@+id/HumadityPercentTextview"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/textcolor"
                     android:layout_below="@+id/percent"
-                    android:text="20"
+                    android:text="@string/_20"
                     android:textSize="95sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="12dp"
                     android:layout_marginStart="12dp" />
             </RelativeLayout>
-
 
         </LinearLayout>
     </RelativeLayout>
