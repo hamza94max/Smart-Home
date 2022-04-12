@@ -1,10 +1,9 @@
 # Smart Home 
 
-is an application used to remotely control and manage connected non-computing devices in the home, typically from a smartphone or tablet. </br></br></br>
+is an application used to remotely control and manage connected non-computing devices in the home, typically from a smartphone or tablet. </br>
 
 
-
-
+# Screen shots
 <div>
 
 <img src = "https://user-images.githubusercontent.com/54688005/125537609-783c9cb7-97de-4065-8b95-b66e0ceffe9a.jpeg" width = 35%>
@@ -17,9 +16,17 @@ is an application used to remotely control and manage connected non-computing de
 
 <br><br><br>
 
-Library For seekbar <br>
-[Seek bar](https://github.com/woxingxiao/BubbleSeekBar)
+# Languages and Tools 
+- Java 
+- Retrofit to deal with local server 
+- Splash Screen
+- View Binding 
+- Dialog 
+- Clean Code 
+- [Library For seekbar](https://github.com/woxingxiao/BubbleSeekBar)
 
 
 
+# How to install and run the project
+You can download the apk from release section 
 
