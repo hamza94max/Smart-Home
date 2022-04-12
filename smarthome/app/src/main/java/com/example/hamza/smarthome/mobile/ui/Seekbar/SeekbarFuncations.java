@@ -1,7 +1,9 @@
-package com.example.hamza.smarthome.Activities.Seekbar;
+package com.example.hamza.smarthome.mobile.ui.Seekbar;
 
 import android.content.Context;
+
 import androidx.core.content.ContextCompat;
+
 import com.example.hamza.smarthome.R;
 import com.xw.repo.BubbleSeekBar;
 

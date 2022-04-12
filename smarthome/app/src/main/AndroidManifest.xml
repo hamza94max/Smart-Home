@@ -20,19 +20,19 @@
         tools:ignore="UnusedAttribute">
 
 
-    <activity android:name=".Activities.Activities.Splashscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-    </activity>
-
-    <activity android:name=".Activities.Activities.MainActivity" >
+    <activity android:name=".mobile.ui.Activities.Splashscreen">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.ALTERNATIVE" />
+            <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-     </activity>
+    </activity>
+
+        <activity android:name=".mobile.ui.Activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
 
     </application>
 

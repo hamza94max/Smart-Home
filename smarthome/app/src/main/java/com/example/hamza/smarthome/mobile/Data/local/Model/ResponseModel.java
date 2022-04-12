@@ -1,4 +1,4 @@
-package com.example.hamza.smarthome.Activities.ResponseModels;
+package com.example.hamza.smarthome.mobile.Data.local.Model;
 
 
 // TODO this class to receive data from server and put the values in these variables

@@ -1,6 +1,6 @@
-package com.example.hamza.smarthome.Activities.Interface;
+package com.example.hamza.smarthome.mobile.Data.RemoteData;
 
-import com.example.hamza.smarthome.Activities.ResponseModels.ResponseModel;
+import com.example.hamza.smarthome.mobile.Data.local.Model.ResponseModel;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

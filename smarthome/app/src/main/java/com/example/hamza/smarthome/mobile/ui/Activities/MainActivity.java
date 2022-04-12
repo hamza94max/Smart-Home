@@ -1,4 +1,4 @@
-package com.example.hamza.smarthome.Activities.Activities;
+package com.example.hamza.smarthome.mobile.ui.Activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,14 +12,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.example.hamza.smarthome.Activities.Interface.ApiInterface;
-import com.example.hamza.smarthome.Activities.ResponseModels.ResponseModel;
-import com.example.hamza.smarthome.Activities.Responses.HumadityResponse;
-import com.example.hamza.smarthome.Activities.Responses.TempertureResponse;
-import com.example.hamza.smarthome.Activities.Seekbar.SeekbarFuncations;
-import com.example.hamza.smarthome.Activities.ServerConnection.ServerConnection;
 import com.example.hamza.smarthome.R;
 import com.example.hamza.smarthome.databinding.ActivityMainBinding;
+import com.example.hamza.smarthome.mobile.Data.RemoteData.ApiInterface;
+import com.example.hamza.smarthome.mobile.Data.RemoteData.RetrofitInstance;
+import com.example.hamza.smarthome.mobile.Data.local.Model.ResponseModel;
+import com.example.hamza.smarthome.mobile.Data.local.Responses.HumadityResponse;
+import com.example.hamza.smarthome.mobile.Data.local.Responses.TempertureResponse;
+import com.example.hamza.smarthome.mobile.ui.Seekbar.SeekbarFuncations;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         private void connectToserver(){
             BASEURL = IPAddressEdittext.getText().toString();
-            ServerConnection.connectToserver(BASEURL);
+            RetrofitInstance.connectToserver(BASEURL);
             callforResponses();
         }
 

@@ -1,12 +1,11 @@
-package com.example.hamza.smarthome.Activities.Responses;
+package com.example.hamza.smarthome.mobile.Data.local.Responses;
 
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.hamza.smarthome.Activities.ResponseModels.ResponseModel;
+import com.example.hamza.smarthome.mobile.Data.local.Model.ResponseModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;

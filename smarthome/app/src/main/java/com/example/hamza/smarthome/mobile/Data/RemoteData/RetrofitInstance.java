@@ -1,11 +1,10 @@
-package com.example.hamza.smarthome.Activities.ServerConnection;
+package com.example.hamza.smarthome.mobile.Data.RemoteData;
 
-import com.example.hamza.smarthome.Activities.Interface.ApiInterface;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ServerConnection {
+public class RetrofitInstance {
 
     public static void connectToserver(String baseurl) {
 

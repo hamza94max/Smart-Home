@@ -1,4 +1,4 @@
-package com.example.hamza.smarthome.Activities.Activities;
+package com.example.hamza.smarthome.mobile.ui.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;

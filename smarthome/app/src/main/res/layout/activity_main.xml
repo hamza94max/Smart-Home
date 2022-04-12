@@ -10,7 +10,7 @@
         android:id="@+id/allscreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activities.Activities.MainActivity">
+        tools:context=".mobile.ui.Activities.MainActivity">
 
         <ScrollView
             android:layout_marginTop="5dp"
